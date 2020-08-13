@@ -1,0 +1,11 @@
+.root-resume {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+/* trying to center everything rendered to page * :not(title, script) */
+.portfolio-background {
+  width: 800px;
+  height: 500px;
+}

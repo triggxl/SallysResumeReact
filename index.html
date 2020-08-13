@@ -4,14 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sallys Resume: React Edition</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="root-resume"></div>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"> </script>
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script lang="text/babel" src="app.js"></script>
-</body>
+  <script type="text/babel">
+
+    const MyImage = ({src}) => (
+      <img src={src} alt="Sally's Portrait picture" />
+    )
+
+    const SallysResume = () => {
+        console.log();
+          return (
+            <div id="portrait">
+              <SallysAboutMe />
+              <MyImage src="./SallyResume.jpg" />
+              <SallysIntroduction />
+              <SallysEducationAndWork />
+              <SallysContactSection />
+            </div>
+          );
+      }
+
+    const SallysAboutMe = () => (
+      <div>
+        <header>
+          <div id="img">
+            <img className="portfolio-background" src="luo-lei-fGdo4EnCjgw-unsplash.jpg" />
+          </div>
+          <h1 className="title">About me</h1>
+        </header>
+      </div>
+    )
+    const SallysIntroduction = () => (
+      <section id="introduction">
+        <p>Hi I'm Sally I'm 25 and below this line you'll find more information about me.</p>
+      </section>
+    )
+
+    const SallysEducationAndWork = () => (
+      <div>
+        <section id="Education">
+          <p>I have studied at:</p>
+          <ul>
+              <li>IES BEZMILIANA</li>
+              <li>Minnesota University</li>
+          </ul>
+        </section>
+        <section id="works">
+          <p>I have worked at:</p>
+          <div id="works_list">
+              <ul>
+                  <li>Github as Engineer during 2018 and there I have to Design, implement, launch, and maintain highly visible and scalable services and applications.
+                  </li>
+                  <li>Jetbrains as Project manager during 2019 and I'm still working there. My work consist in
+                      use design patterns to solve business problems
+                  </li>
+              </ul>
+          </div>
+        </section>
+      </div>
+    )
+
+    const SallysContactSection = () => (
+      <div>
+      <section id="Contact-section">
+        <p>My contact information: </p>
+          <address id="Contact-info">
+              <p>My name is Sally</p>
+              <p>My email is: <a href="mailto://sally@IntenetExplorer.old">sally@IntenetExplorer.old</a></p>
+              <p>My phone number is: <a href="tel:+34100572415">+34 100 57 24 15</a></p>
+          </address>
+      </section>
+      </div>
+    )
+
+    const App = props => {
+      return (
+        <div className={props.className}>
+          <SallysResume />
+        </div>
+      )
+    }
+
+    ReactDOM.render(
+      <App />,
+      document.querySelector('.root-resume')
+    );
+
+
+
+    </script>
+  </body>
 </html>
 
-<!-- 2054 2102-->
+<!-- 
+Define: 
+fractions
+  a shortcut to group a list of children without adding extra nodes to the DOM
+destructuring 
+components
+props
+children -->
